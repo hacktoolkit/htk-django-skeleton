@@ -330,6 +330,8 @@ LOGGING = {
 #####
 # begin htk settings
 
+HTK_EMAIL_CONTEXT_GENERATOR = 'htk.mailers.email_context_generator'
+
 HTK_FEEDBACK_EMAIL_SUBJECT = 'New feedback from Hacktoolkit.com'
 HTK_FEEDBACK_EMAIL_TO = (
     'Hacktoolkit <hello@hacktoolkit.com>',
