@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /admin
+Disallow: /htkadmin
+
+Crawl-delay: 10
+Sitemap: http://hacktoolkit.com/sitemap.xml
+Host: hacktoolkit.com

@@ -1,0 +1,158 @@
+@import "_imports/buttons.less";
+
+/* dimensions and borders */
+@border-radius-base: 10px;
+
+.rounded-base(@scale) {
+    -webkit-border-radius: (@border-radius-base * @scale); /* Safari prototype */
+    -moz-border-radius: (@border-radius-base * @scale); /* Gecko browsers */
+    border-radius: (@border-radius-base * @scale); /* Everything else - limited support at the moment */
+}
+.rounded, .rounded-10, .rounded-medium {
+    .rounded-base(1);
+}
+.rounded-2_5, .rounded-small {
+    .rounded-base(0.25);
+}
+.rounded-5, .rounded-regular {
+    .rounded-base(0.5);
+}
+.rounded-20, .rounded-large {
+    .rounded-base(2);
+}
+.rounded-40, .rounded-banner {
+    .rounded-base(4);
+}
+
+.rounded-left-base(@scale) {
+    /* Safari prototype */
+    -webkit-border-top-left-radius: (@border-radius-base * @scale);
+    -webkit-border-bottom-left-radius: (@border-radius-base * @scale);
+    /* Gecko browsers */
+    -moz-border-top-left-radius: (@border-radius-base * @scale);
+    -moz-border-bottom-left-radius: (@border-radius-base * @scale);
+    /* Everything else - limited support at the moment */
+    border-top-left-radius: (@border-radius-base * @scale);
+    border-bottom-left-radius: (@border-radius-base * @scale);
+}
+.rounded-left, .rounded-left-10, .rounded-left-medium {
+    .rounded-left-base(1);
+}
+.rounded-left-2_5, .rounded-left-small {
+    .rounded-left-base(0.25);
+}
+.rounded-left-5, .rounded-left-regular {
+    .rounded-left-base(0.5);
+}
+.rounded-left-20, .rounded-left-large {
+    .rounded-left-base(2);
+}
+.rounded-left-40, .rounded-left-banner {
+    .rounded-left-base(4);
+}
+
+.rounded-right-base(@scale) {
+    /* Safari prototype */
+    -webkit-border-top-right-radius: (@border-radius-base * @scale);
+    -webkit-border-bottom-right-radius: (@border-radius-base * @scale);
+    /* Gecko browsers */
+    -moz-border-top-right-radius: (@border-radius-base * @scale);
+    -moz-border-bottom-right-radius: (@border-radius-base * @scale);
+    /* Everything else - limited support at the moment */
+    border-top-right-radius: (@border-radius-base * @scale);
+    border-bottom-right-radius: (@border-radius-base * @scale);
+}
+.rounded-right, .rounded-right-10, .rounded-right-medium {
+    .rounded-right-base(1);
+}
+.rounded-right-2_5, .rounded-right-small {
+    .rounded-right-base(0.25);
+}
+.rounded-right-5, .rounded-right-regular {
+    .rounded-right-base(0.5);
+}
+.rounded-right-20, .rounded-right-large {
+    .rounded-right-base(2);
+}
+.rounded-right-40, .rounded-right-banner {
+    .rounded-right-base(4);
+}
+
+.rounded-bottom-base(@scale) {
+    /* Safari prototype */
+    -webkit-border-bottom-left-radius: (@border-radius-base * @scale);
+    -webkit-border-bottom-right-radius: (@border-radius-base * @scale);
+    /* Gecko browsers */
+    -moz-border-bottom-left-radius: (@border-radius-base * @scale);
+    -moz-border-bottom-right-radius: (@border-radius-base * @scale);
+    /* Everything else - limited support at the moment */
+    border-bottom-left-radius: (@border-radius-base * @scale);
+    border-bottom-right-radius: (@border-radius-base * @scale);
+}
+.rounded-bottom, .rounded-bottom-10 {
+    .rounded-bottom-base(1);
+}
+
+/* positioning */
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clear {
+    clear: both;
+}
+
+/* text */
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.unstyled {
+    ul& {
+        margin: 0px;
+        padding: 0px;
+        li {
+            list-style-type: none;
+        }
+    }
+
+}
+
+/* behavior */
+.no-highlight {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.hidden {
+    display: none;
+}

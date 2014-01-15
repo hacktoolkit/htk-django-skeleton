@@ -1,0 +1,23 @@
+<form method="POST" action="{% url 'account_settings' %}" class="pure-form">
+  <input type="hidden" name="update_form_type" value="{{ user_update_form.key }}" />
+  {% csrf_token %}
+  {% for hidden in user_update_form.form.hidden_fields %}
+  {{ hidden }}
+  {% endfor %}
+  <div>
+    {% for field in user_update_form.form.visible_fields %}
+    <div class="field-label">
+      {{ field.label_tag }}
+    </div>
+    <div class="left">
+      {{ field }}
+    </div>
+    <div>
+      <span class="update-success hidden">Saved</span>
+      <span class="update-invalid hidden">Invalid</span>
+    </div>
+    <div class="clear">
+    </div>
+    {% endfor %}
+  </div>
+</form>

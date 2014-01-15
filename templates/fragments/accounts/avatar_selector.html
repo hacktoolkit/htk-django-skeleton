@@ -1,0 +1,35 @@
+<div id="avatar_selector">
+  <div class="settings-avatar-box{% if user.profile.avatar != 'gravatar' %} deselected{% endif %}">
+    {% load gravatar %}
+    {% gravatar_img_for_user user %}
+    <br/>
+    <div class="avatar-type">
+      <a href="http://gravatar.com" target="_blank">Gravatar</a>
+    </div>
+  </div>
+
+  {% with fbid=user.profile.get_fbid %}
+  {% if fbid %}
+  <div class="settings-avatar-box{% if user.profile.avatar != 'facebook' %} deselected{% endif %}">
+    {% include 'fragments/profiles/facebook_picture.html' %}
+    <br/>
+    <div class="avatar-type">
+      Facebook
+    </div>
+  </div>
+  {% endif %}
+  {% endwith %}
+
+  {% with twid=user.profile.get_twid %}
+  {% if twid %}
+  <div class="settings-avatar-box{% if user.profile.avatar != 'twitter' %} deselected{% endif %}">
+    {% include 'fragments/profiles/twitter_picture.html' %}
+    <br/>
+    <div class="avatar-type">
+      Twitter
+    </div>
+  </div>
+  {% endif %}
+  {% endwith %}
+
+</div>

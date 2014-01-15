@@ -1,0 +1,16 @@
+{% with fbid=profile.get_fbid twid=profile.get_twid %}
+{% if profile.avatar == 'gravatar' %}
+
+{% load gravatar %}
+{% gravatar_img_for_user profile.user %}
+
+{% elif profile.avatar == 'facebook' and fbid %}
+
+{% include 'fragments/profiles/facebook_picture.html' %}
+
+{% elif profile.avatar == 'twitter' and twid %}
+
+{% include 'fragments/profiles/twitter_picture.html' %}
+
+{% endif %}
+{% endwith %}

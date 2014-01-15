@@ -1,0 +1,50 @@
+{% extends 'htkadmin/base.html' %}
+
+{% block content %}
+
+<h1>Pulse</h1>
+
+<b>Total Users</b>: {{ users.count }}<br/>
+
+<br/>
+
+<div class="pure-g-r">
+  <div class="pure-u-1-3">
+    <b>User Login and Registration Stats (Totals)</b><br/>
+    <div id="user_login_registration_count_table"></div>
+  </div>
+  <div class="pure-u-1-3">
+    <b>User Login and Registration Stats (Breakdown Per Hour)</b>
+    <div id="user_login_registration_breakdown_table"></div>
+  </div>
+  <div class="pure-u-1-3">
+  </div>
+</div>
+<br/>
+<br/>
+<b>Duplicate Emails: </b> {{ duplicate_emails|length }}<br/>
+{% if duplicate_emails %}
+<ul>
+  {% for duplicate_email in duplicate_emails %}
+  <li>{{ duplicate_email }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+None
+{% endif %}
+<br/>
+<br/>
+
+<div id="pulse_detail_tabs">
+  <ul>
+    <li><a href="#recent_registrations">Recent Registrations</a></li>
+    <li><a href="#recent_logins">Recent Logins</a></li>
+  </ul>
+  <div>
+    <div id="recent_registrations"></div>
+    <div id="recent_logins"></div>
+  </div>
+</div>
+<br/>
+
+{% endblock %}

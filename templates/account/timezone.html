@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1><a href="{% url 'account_settings' %}">Settings</a> - Timezone</h1>
+
+Keeping your timezone up to date will help you ensure that you get all the information in your local time.
+<br/>
+<br/>
+
+{% include 'fragments/forms/generic_tabular.html' with form=timezone_form submit_label='Update' %}
+
+{% endblock %}

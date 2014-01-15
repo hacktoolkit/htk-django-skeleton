@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if mismatch %}
+You are currently logged into an account that is different from the one you are trying to confirm. Please log out and try the confirmation link again.
+{% elif expired %}
+<h1>Email Confirmation Expired</h1>
+Please <a href="{% url 'account_resend_confirmation' %} %}">request a confirmation to be resent</a>, and confirm within 48  hours.<br/>
+{% elif success %}
+<h1>Email Confirmed</h1>
+Thanks for confirming your email.<br/>
+<br/>
+
+{% if was_activated %}
+Your account is now activated and you may now <a href="{% url 'account_login' %}">login</a>.
+{% else %}
+Go to your <a href="{% url 'home' %}">Dashboard</a> or make
+further changes to your <a href="{% url 'account_settings' %}">Account Settings</a>.
+{% endif %}
+
+{% endif %}
+{% endblock %}

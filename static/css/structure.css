@@ -1,0 +1,220 @@
+body {
+  min-width: 960px;
+  min-height: 750px;
+  /* IE Version */
+
+  /*width:expression(document.body.clientWidth < 960 ? "@fixed-width" : "auto" );*/
+
+}
+/* -------------------------------------------------- */
+/* skeleton */
+/* -------------------------------------------------- */
+#header {
+  width: 100%;
+  height: 45px;
+  padding-bottom: 20px;
+}
+#header .content {
+  width: 960px;
+  height: 100%;
+  margin: auto;
+  padding-top: 20px;
+}
+#header .content .header-left {
+  text-align: left;
+}
+#header .content .header-left .logo-container {
+  margin-right: 5px;
+}
+#header .content .header-left #header_nav {
+  position: relative;
+  width: 315px;
+  /* min-width is 270px and is subject to change */
+
+}
+#header .content .header-right {
+  text-align: right;
+}
+#header .content .header-right #usernav {
+  width: 480px;
+}
+#header .content ul {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+#header .content ul li {
+  display: inline-block;
+  list-style-type: none;
+}
+.pure-menu-label {
+  /*    padding-right: 20px !important;*/
+
+}
+#errors {
+  padding: 5px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid;
+  border-radius: 6px;
+}
+#errors li {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+#main {
+  font-size: 18px;
+}
+#main .content {
+  width: 960px;
+  margin: auto;
+  padding: 20px 0px 50px;
+}
+footer {
+  max-height: 65px;
+}
+footer #footer {
+  max-height: 65px;
+  width: 100%;
+}
+footer #footer .footer-vspace {
+  height: 15px;
+}
+footer #footer .content {
+  width: 960px;
+  margin: auto;
+}
+footer #footer #footer_links li {
+  display: inline;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+/* -------------------------------------------------- */
+/* login and registration */
+/* -------------------------------------------------- */
+.login-container {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+.login-logo {
+  margin-bottom: 20px;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.login-separator {
+  width: 600px;
+  margin: 30px auto 20px;
+  clear: both;
+}
+#site_login {
+  width: 300px;
+  margin: auto;
+}
+/* -------------------------------------------------- */
+/* positioning and borders */
+/* -------------------------------------------------- */
+.form-table td {
+  padding: 5px;
+}
+/* -------------------------------------------------- */
+/* text formatting */
+/* -------------------------------------------------- */
+h1 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 72px;
+}
+h2 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 60px;
+}
+h3 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 48px;
+}
+h4 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 19.919999999999998px;
+  line-height: 39.839999999999996px;
+}
+h5 {
+  margin: 0px;
+  font-weight: bold;
+  font-size: 15.96px;
+  line-height: 31.92px;
+}
+ol li {
+  list-style-type: decimal;
+}
+/* -------------------------------------------------- */
+/* app */
+/* -------------------------------------------------- */
+#home_splash {
+  padding-top: 50px;
+  text-align: center;
+}
+#home_splash .blurb {
+  font-size: 36px;
+}
+#prelaunch_signup {
+  margin-top: 50px;
+  text-align: center;
+}
+#prelaunch_signup input {
+  width: 300px;
+}
+.settings-avatar-box {
+  float: left;
+  padding: 5px;
+  border: 1px solid;
+}
+.player-profile-tile {
+  float: left;
+  margin: 0px 5px 5px 0px;
+}
+.profile-picture {
+  width: 80px;
+  height: 80px;
+}
+#rsvp_forms form {
+  float: left;
+  margin-right: 5px;
+}
+.calendar-widget-container {
+  z-index: 10;
+  position: absolute;
+}
+.timepicker-widget-container {
+  z-index: 10;
+  position: absolute;
+}
+.policy-agreement-clause {
+  font-size: 60%;
+}
+.list-tile {
+  padding: 5px;
+  /*    border: 1px solid;*/
+
+  /*    border-radius: 5px;*/
+
+}
+.list-tile + .list-tile {
+  margin-top: 5px;
+}
+.list-tile.list-tile-1-2 {
+  width: 33.333%;
+}
+.list-tile.list-tile-2-3 {
+  width: 66.666%;
+}

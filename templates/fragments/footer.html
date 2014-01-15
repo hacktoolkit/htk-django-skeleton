@@ -1,0 +1,28 @@
+<div id="footer">
+  <div class="footer-vspace"></div>
+  <div class="content">
+    <div class="centered centered-text">
+      <ul id="footer_links" class="unstyled">
+        {% for link in footer_links %}
+        <li>
+	  <a href="{{ link.uri }}"{% if link.selected %} class="selected"{% endif %}>{{ link.text }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <a class="facebook-icon fa-stack fa-lg" href="http://facebook.com/hacktoolkit" target="_blank">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-facebook fa-inverse fa-stack-1x"></i>
+      </a>
+      <a class="twitter-icon fa-stack fa-lg" href="http://twitter.com/hacktoolkit" target="_blank">
+        <i class="fa fa-square fa-stack-2x"></i>
+        <i class="fa fa-twitter fa-inverse fa-stack-1x"></i>
+      </a>
+      &nbsp;
+      &nbsp;
+      &middot;
+      &copy; Hacktoolkit.com {{ copyright_years }} &middot;
+      A project by <a href="http://jontsai.com" target="_blank">Jonathan Tsai</a>
+    </div>
+  </div>
+</div>

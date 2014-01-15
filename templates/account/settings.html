@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Account Settings</h1>
+
+<div class="pure-g">
+  <div id="settings" class="pure-u-1-2">
+    Primary Email: {{ user.email }} - <a href="{% url 'account_emails' %}">Edit Emails</a>
+    <br/>
+    Password: <a href="{% url 'account_password' %}">Edit Password</a><br/>
+    {% with timezone=user.profile.timezone %}
+    Timezone: {% if timezone %}{{ timezone }}{% else %}No timezone set{% endif %} - <a href="{% url 'account_timezone' %}">Edit Timezone</a>
+    {% endwith %}
+    <br/>
+    <br/>
+
+    {% for user_update_form in user_update_forms %}
+    {% include 'fragments/accounts/user_settings_update_form.html' %}
+    {% endfor %}
+
+    <br/>
+  </div>
+
+  <div class="pure-u-1-2">
+    {% if user.profile.has_username_set %}<a href="{% url 'profile' user.username %}">See Public Profile</a><br/>{% endif %}
+    <h3>Profile Images</h3>
+    {% include 'fragments/accounts/avatar_selector.html' %}
+
+    <div class="clear">
+    </div>
+
+    <h3>Social Accounts</h3>
+
+    {% for social_auth in social_auths_status %}
+    {{ social_auth.name }}:
+    {% if social_auth.linked %}
+    Already Linked
+    <form method="post" action="{% url 'social:disconnect' social_auth.key %}">
+      {% csrf_token %}
+      <button type="submit" class="pure-button pure-button-xsmall">Disconnect</button>
+    </form><br/>
+    {% else %}
+    <a href="{% url 'social:begin' social_auth.key %}">Link with {{ social_auth.name }}</a><br/>
+    {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

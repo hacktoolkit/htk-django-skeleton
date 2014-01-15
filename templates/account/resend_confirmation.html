@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if already_active %}
+<h1>Already Confirmed</h1>
+This email address has already been confirmed, and the account is active. Please proceed to <a href="{% url 'account_login' %}">login</a> to your account.
+{% elif success %}
+<h1>Confirmation Email Re-Sent</h1>
+A unique link to verify your email address has been sent to you.<br/>
+<br/>
+Please check your email shortly, and make sure that "Hacktoolkit.com" is on your safe senders list.
+{% else %}
+<h1>Resend Confirmation</h1>
+Please enter your email address to have the confirmation email re-sent.
+<br/>
+<br/>
+
+<form method="POST">
+  {% csrf_token %}
+  <table class="form-table">
+    {% for field in resend_confirmation_form %}
+    <tr>
+      <td>{{ field.label_tag}}:</td>
+      <td>{{ field }}</td>
+      <td class="form-error">{{ field.errors }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>
+	  <button type="submit">Submit</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<br/>
+{% endif %}
+{% endblock %}

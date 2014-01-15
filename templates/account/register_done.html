@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Please Confirm Your Email</h1>
+Thanks for creating a Hacktoolkit account.<br/>
+<br/>
+There's just one more step: please confirm your email address.
+Check your email to do this and follow the instructions there.
+If you don't see an email from Hacktoolkit, check your spam folder.
+If you still don't see one, then <a href="{% url 'account_resend_confirmation' %}">request another email confirmation</a> to be sent.<br/>
+<br/>
+After confirming your email address, you can <a href="{% url 'account_login' %}">login</a> to start using the Hacktoolkit!
+{% endblock %}

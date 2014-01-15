@@ -1,0 +1,99 @@
+@import "_imports/htkadmin/vars.less";
+
+body {
+    width: 100%;
+    min-width: @fixed-width;
+    min-height: @min-height;
+    /* IE Version */
+    /*width:expression(document.body.clientWidth < 960 ? "@fixed-width" : "auto" );*/
+}
+
+/* -------------------------------------------------- */
+/* skeleton */
+/* -------------------------------------------------- */
+#header {
+    width: 100%;
+    height: @header-height;
+    .content {
+        margin: auto;
+        padding: 7px @horizontal-padding 7px;
+        .header-left {
+            text-align: left;
+            .logo-container {
+                margin-right: 5px;
+            }
+            .title {
+                font-size: 30px;
+            }
+        }
+        .header-right {
+            position: absolute;
+            right: @horizontal-padding;
+            text-align: right;
+        }
+        ul {
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            li {
+                display: inline-block;
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+#main {
+    font-size: 18px;
+    .content {
+        min-width: @fixed-width;
+        margin: auto;
+        padding: 20px @horizontal-padding 50px;
+    }
+}
+
+footer {
+    #footer {
+        height: @footer-height;
+        width: 100%;
+        .content {
+            min-width: @fixed-width;
+            padding: 10px @horizontal-padding 10px;
+            margin: auto;
+        }
+        .links {
+            text-align: center;
+        }
+    }
+}
+
+/* -------------------------------------------------- */
+/* text formatting */
+/* -------------------------------------------------- */
+@hsize: 12px;
+.h-base(@font-size: @hsize) {
+    margin: 0px;
+    font-weight: bold;
+    font-size: @font-size;
+    line-height: (@font-size * 2);
+}
+
+h1 {
+    .h-base(@hsize * 3);
+}
+h2 {
+    .h-base(@hsize * 2.5);
+}
+h3 {
+    .h-base(@hsize * 2);
+}
+h4 {
+    .h-base(@hsize * 1.66);
+}
+h5 {
+    .h-base(@hsize * 1.33);
+}
+
+ol li {
+    list-style-type: decimal;
+}

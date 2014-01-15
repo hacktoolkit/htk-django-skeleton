@@ -1,0 +1,234 @@
+<script>
+var userLoginRegistrationCountData = [
+  {
+     field: 'Last month',
+     logins: '{{ logins_last_month }}',
+     registrations: '{{ registrations_last_month }}',
+  },
+  {
+     field: 'Last week',
+     logins: '{{ logins_last_week }}',
+     registrations: '{{ registrations_last_week }}',
+  },
+  {
+     field: 'Last day',
+     logins: '{{ logins_last_day }}',
+     registrations: '{{ registrations_last_day }}',
+  },
+  {
+     field: 'Last hour',
+     logins: '{{ logins_last_hour }}',
+     registrations: '{{ registrations_last_hour }}',
+  },
+];
+
+var userLoginRegistrationCountTableColumns = [
+   {
+     key: 'field',
+     label: 'Category',
+     sortable: true
+   },
+   {
+     key: 'logins',
+     label: 'Login',
+     sortable: true
+   },
+   {
+     key: 'registrations',
+     label: 'Registration',
+     sortable: true
+   },
+];
+
+var userLoginRegistrationBreakdownData = [
+   {
+     field: 'Last month',
+     logins_breakdown: '{{ logins_per_hour_last_month }}',
+     registrations_breakdown: '{{ registrations_per_hour_last_month }}',
+   },
+   {
+     field: 'Last week',
+     logins_breakdown: '{{ logins_per_hour_last_week }}',
+     registrations_breakdown: '{{ registrations_per_hour_last_week }}',
+   },
+   {
+     field: 'Last day',
+     logins_breakdown: '{{ logins_per_hour_last_day }}',
+     registrations_breakdown: '{{ registrations_per_hour_last_day }}',
+   },
+];
+
+var userLoginRegistrationBreakdownTableColumns = [
+   {
+     key: 'field',
+     label: 'Category',
+     sortable: true
+   },
+   {
+     key: 'logins_breakdown',
+     label: 'Login',
+     sortable: true
+   },
+   {
+     key: 'registrations_breakdown',
+     label: 'Registration',
+     sortable: true
+   },
+];
+
+var recentRegistrationsData = [
+{% for user in recently_joined_users  %}
+   {
+      id: '<a href={% url 'admin:auth_user_change' user.id %} target="_blank">{{ user.id }}</a>',
+      {% if user.profile.has_username_set %}
+      username: '{{ user.username }}',
+      {% else %}
+      {% endif %}
+      email: '{{ user.email }}',
+      first_name: '{{ user.first_name }}',
+      last_name: '{{ user.last_name }}',
+      date_joined: '{{ user.date_joined|date:"Y-m-d H:i:s" }}',
+      activated: '{{ user.is_active }}',
+{#      resend_activation_email: {% if user.is_active %}''{% else %}'<a href="{% url 'tadmin_resend_activation_email' user.id %}" target="_blank">Resend Activation Email</a>'{% endif %},#}
+   },
+{% endfor  %}
+];
+
+var recentRegistrationsTableColumns = [
+  {
+    key: 'id',
+    label: 'Id',
+    sortable: true,
+    allowHTML: true
+  },
+  {
+    key: 'username',
+    label: 'Username',
+    sortable: true
+  },
+  {
+    key: 'email',
+    label: 'Email',
+    sortable: true
+  },
+  {
+    key: 'first_name',
+    label: 'First Name',
+    sortable: true
+  },
+  {
+    key: 'last_name',
+    label: 'Last Name',
+    sortable: true
+  },
+  {
+    key: 'date_joined',
+    label: 'Date Joined',
+    sortable: true
+  },
+  {
+    key: 'activated',
+    label: 'Activated',
+    sortable: false
+  },
+  {
+    key: 'resend_activation_email',
+    label: 'Resend Activation Email',
+    allowHTML: true,
+    sortable: false
+  },
+  {
+    key: 'score',
+    label: 'Score',
+    emptyCellValue: -1,
+    sortable: true
+  }
+];
+
+var recentLoginsData = [
+{% for user in recent_logins %}
+   {
+      id: '<a href={% url 'admin:auth_user_change' user.id %} target="_blank">{{ user.id }}</a>',
+      {% if user.profile.has_username_set %}
+      username: '{{ user.username }}',
+      {% else %}
+      {% endif %}
+      email: '{{ user.email }}',
+      first_name: '{{ user.first_name }}',
+      last_name: '{{ user.last_name }}',
+      date_joined : '{{ user.date_joined|date:"Y-m-d H:i:s" }}',
+      last_login: '{{ user.last_login|date:"Y-m-d H:i:s" }}',
+   },
+{% endfor  %}
+];
+
+var recentLoginsTableColumns = [
+  {
+    key: 'id',
+    label: 'Id',
+    sortable: true,
+    allowHTML: true
+  },
+  {
+    key: 'username',
+    label: 'Username',
+    sortable: true
+  },
+  {
+    key: 'email',
+    label: 'Email',
+    sortable: true
+  },
+  {
+    key: 'first_name',
+    label: 'First Name',
+    sortable: true
+  },
+  {
+    key: 'last_name',
+    label: 'Last Name',
+    sortable: true
+  },
+  {
+    key: 'date_joined',
+    label: 'Date Joined',
+    sortable: true
+  },
+  {
+    key: 'last_login',
+    label: 'Last Login',
+    sortable: true
+  },
+  {
+    key: 'score',
+    label: 'Score',
+    emptyCellValue: -1,
+    sortable: true
+  }
+];
+
+var datatables = [
+   {
+     container: '#user_login_registration_count_table',
+     columns: userLoginRegistrationCountTableColumns,
+     data: userLoginRegistrationCountData
+   },
+   {
+     container: '#user_login_registration_breakdown_table',
+     columns: userLoginRegistrationBreakdownTableColumns,
+     data: userLoginRegistrationBreakdownData
+   },
+   {
+     container: '#recent_registrations',
+     columns: recentRegistrationsTableColumns,
+     data: recentRegistrationsData
+   },
+   {
+     container: '#recent_logins',
+     columns: recentLoginsTableColumns,
+     data: recentLoginsData
+   },
+];
+
+</script>
+{% include 'htkadmin/fragments/js/datatables.html' %}

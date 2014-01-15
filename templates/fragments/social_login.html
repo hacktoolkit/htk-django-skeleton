@@ -1,0 +1,12 @@
+<div class="centered-text">
+  <a href="{% url 'social:begin' 'facebook' %}{% if query_string %}?{{ query_string }}{% endif %}" class="pure-button facebook-button">
+    <i class="icon-facebook-sign pull-left"></i>
+    Connect with Facebook
+  </a>
+
+
+  <a href="{% url 'social:begin' 'twitter' %}{% if query_string %}?{{ query_string }}{% endif %}" class="pure-button twitter-button">
+    <i class="icon-twitter-sign pull-left"></i>
+    Connect with Twitter
+  </a>
+</div>

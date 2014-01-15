@@ -1,0 +1,31 @@
+<div id="header">
+  <div class="content">
+    <div class="pure-g-r">
+      <div class="pure-u-1-2">
+        <div class="header-left">
+          {% if show_header_logo %}
+          <div class="logo-container left">
+            <a href="{% if user %}{% url 'account_settings' %}{% else %}{% url 'home' %}{% endif %}">{% include 'fragments/logo.html' with size="small" %}</a>
+          </div>
+          {% endif %}
+          {% if show_header_nav %}
+          <div id="header_nav" class="left pure-menu pure-menu-open pure-menu-horizontal">
+            <ul id="header_nav_items" class="hidden">
+              {% for link in nav_links %}
+              <li>
+                <a href="{{ link.uri }}"{% if link.selected %} class="selected"{% endif %}>{{ link.text }}</a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="header-right">
+          {% include 'fragments/usernav.html' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

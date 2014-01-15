@@ -1,0 +1,17 @@
+{% if players %}
+
+{% for player in players %}
+{% with profile=player.profile %}
+
+{% include 'fragments/profiles/player_profile_tile.html' with profile=profile %}
+
+{% endwith %}
+{% endfor %}
+
+{% else %}
+
+{% comment %}No players{% endcomment %}
+
+{% endif %}
+
+<div class="clear"></div>

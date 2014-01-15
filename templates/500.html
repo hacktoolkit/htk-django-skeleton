@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div id="home_splash">
+  {% include 'fragments/logo.html' with size='large' %}
+
+  <h1>500 Internal Server Error</h1>
+  Redirecting to <a href="{% url 'home' %}">home</a> in 5 seconds.
+  <br/>
+  <br/>
+  {% include 'fragments/facebook/like.html' %}
+
+</div>
+
+{% endblock %}

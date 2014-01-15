@@ -1,0 +1,45 @@
+/* this is a green */
+/* this is a maroon */
+/* this is a light blue */
+#feedback_tab {
+  top: 40%;
+  position: fixed;
+  z-index: 10000;
+}
+#feedback_panel {
+  text-align: left;
+  font-family: Helvetica, Arial, Sans;
+}
+#feedback_panel:focus {
+  outline: none;
+}
+#feedback_panel input,
+#feedback_panel textarea {
+  font-size: 14px;
+  width: 98%;
+}
+#feedback_panel .yui3-widget-hd {
+  background-color: #cccccc;
+  color: #333333;
+  background: -moz-linear-gradient(0% 100% 90deg, #aaaaaa 7%, #cccccc 50%, #eeeeee 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#aaaaaa), color-stop(0.07, #aaaaaa), color-stop(0.5, #cccccc), to(#eeeeee));
+  font-weight: bold;
+}
+#feedback_button {
+  padding: 10px;
+  border: 3px solid;
+  font-weight: bold;
+  font-family: Helvetica, Arial, Sans;
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  -webkit-transform: translate(-50px) rotate(-90deg);
+  -moz-transform: translate(-50px) rotate(-90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+/*
+#feedback_button, #feedback_panel .yui3-widget-bd {
+    background-color: @white;
+    color: @dark-gray;
+}
+*/

@@ -1,0 +1,27 @@
+/* this is a green */
+/* this is a maroon */
+/* this is a light blue */
+.facebook-button {
+  color: #ffffff !important;
+  width: 190px;
+  border-radius: 4px;
+  background-color: #4c66a4;
+}
+.twitter-button {
+  color: #ffffff !important;
+  width: 190px;
+  border-radius: 4px;
+  background-color: #2c77ba;
+}
+.facebook-icon {
+  font-size: small;
+}
+.facebook-icon .fa-square {
+  color: #4c66a4;
+}
+.twitter-icon {
+  font-size: small;
+}
+.twitter-icon .fa-square {
+  color: #2c77ba;
+}

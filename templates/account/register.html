@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% include 'fragments/login_logo.html' %}
+
+{% include 'fragments/social_login.html' %}
+
+<hr class="login-separator" />
+
+<div id="site_login">
+  <h5>Sign Up for a New Account*</h5>
+  {% include 'fragments/forms/pure_stacked.html' with form=reg_form submit_label='Sign Up' %}
+  {% include 'fragments/policy_agreement_clause.html' %}
+  <br/>
+  Already have an account? <a href="{% url 'account_login' %}">Login</a>.
+  <br/>
+  <br/>
+  * It's completely <span class="bold">free</span>!
+  And we will <span class="bold">never</span> spam you.
+</div>
+<br/>
+
+{% endblock %}

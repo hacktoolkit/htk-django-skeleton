@@ -1,0 +1,5 @@
+<form method="POST">
+  {% csrf_token %}
+  <input type="hidden" name="primary_email" value="{{ email }}" />
+  (<a href="javascript:void(0);" class="set-primary">Set as primary</a>)
+</form>

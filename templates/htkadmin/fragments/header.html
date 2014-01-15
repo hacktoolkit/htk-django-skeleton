@@ -1,0 +1,23 @@
+<div id="header">
+  <div class="content">
+    <div class="pure-g-r">
+      <div class="pure-u-1-2">
+        <div class="header-left">
+          <div class="logo-container left">
+            <a href="{% if user %}{% url 'account_settings' %}{% else %}{% url 'home' %}{% endif %}">{% include 'fragments/logo.html' with size="small" %}</a>
+          </div>
+          <div class="title">
+            Custom Admin Tools
+          </div>
+        </div>
+      </div>
+      <div class="pure-u-1-2">
+        <div class="menu-container hidden">
+          <div id="horizontal_menu" class="header-right">
+            {% include 'htkadmin/fragments/menu.html' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

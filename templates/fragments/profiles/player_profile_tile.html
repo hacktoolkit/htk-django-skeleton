@@ -1,0 +1,9 @@
+<div id="_{{ profile.user.id }}" class="player-profile-tile">
+  {% include 'fragments/profiles/player_picture.html' %}
+  <br/>
+  {% if profile.has_username_set %}
+  <a href="{{ profile.get_profile_url }}">{{ profile.get_display_name }}</a>
+  {% else %}
+  {{ profile.get_display_name }}
+  {% endif %}
+</div>

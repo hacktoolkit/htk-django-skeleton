@@ -1,0 +1,240 @@
+@import "_imports/vars.less";
+
+body {
+    min-width: @fixed-width;
+    min-height: @min-height;
+    /* IE Version */
+    /*width:expression(document.body.clientWidth < 960 ? "@fixed-width" : "auto" );*/
+}
+
+/* -------------------------------------------------- */
+/* skeleton */
+/* -------------------------------------------------- */
+#header {
+    width: 100%;
+    height: @header-height;
+    padding-bottom: 20px;
+    .content {
+        width: @fixed-width;
+        height: 100%;
+        margin: auto;
+        padding-top: 20px;
+        .header-left {
+            text-align: left;
+            .logo-container {
+                margin-right: 5px;
+            }
+            #header_nav {
+                position: relative;
+                width: 315px; /* min-width is 270px and is subject to change */
+            }
+        }
+        .header-right {
+            text-align: right;
+            #usernav {
+                width: (@fixed-width / 2);
+            }
+        }
+        ul {
+            display: inline-block;
+            margin: 0px;
+            padding: 0px;
+            li {
+                display: inline-block;
+                list-style-type: none;
+            }
+        }
+    }
+}
+
+.pure-menu-label {
+/*    padding-right: 20px !important;*/
+}
+
+#errors {
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    border: 1px solid;
+    border-radius: 6px;
+
+    li {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+
+}
+
+#main {
+    font-size: 18px;
+    .content {
+        width: @fixed-width;
+        margin: auto;
+        padding: 20px 0px 50px;
+    }
+}
+
+footer {
+    max-height: @footer-height;
+    #footer {
+        max-height: @footer-height;
+        width: 100%;
+        .footer-vspace {
+            height: 15px;
+        }
+        .content {
+            width: @fixed-width;
+            margin: auto;
+        }
+        #footer_links li {
+            display: inline;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+    }
+}
+
+/* -------------------------------------------------- */
+/* login and registration */
+/* -------------------------------------------------- */
+
+.login-container {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.login-logo {
+    margin-bottom: 20px;
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.login-separator {
+    width: 600px;
+    margin: 30px auto 20px;
+    clear: both;
+}
+
+#site_login {
+    width: 300px;
+    margin: auto;
+}
+
+/* -------------------------------------------------- */
+/* positioning and borders */
+/* -------------------------------------------------- */
+.form-table td {
+    padding: 5px;
+}
+
+/* -------------------------------------------------- */
+/* text formatting */
+/* -------------------------------------------------- */
+@hsize: 12px;
+.h-base(@font-size: @hsize) {
+    margin: 0px;
+    font-weight: bold;
+    font-size: @font-size;
+    line-height: (@font-size * 2);
+}
+
+h1 {
+    .h-base(@hsize * 3);
+}
+h2 {
+    .h-base(@hsize * 2.5);
+}
+h3 {
+    .h-base(@hsize * 2);
+}
+h4 {
+    .h-base(@hsize * 1.66);
+}
+h5 {
+    .h-base(@hsize * 1.33);
+}
+
+ol li {
+    list-style-type: decimal;
+}
+
+/* -------------------------------------------------- */
+/* app */
+/* -------------------------------------------------- */
+#home_splash {
+    padding-top: 50px;
+    text-align: center;
+    .blurb {
+        font-size: (@hsize * 3);
+    }
+}
+
+#prelaunch_signup {
+    margin-top: 50px;
+    text-align: center;
+    input {
+        width: 300px;
+    }
+}
+
+@profile-picture-width: 80px;
+@profile-picture-height: 80px;
+
+.settings-avatar-box {
+    float: left;
+    padding: 5px;
+    border: 1px solid;
+}
+
+.player-profile-tile {
+    float: left;
+    margin: 0px 5px 5px 0px;
+}
+
+.profile-picture {
+    width: @profile-picture-width;
+    height: @profile-picture-height;
+}
+
+#rsvp_forms {
+    form {
+        float: left;
+        margin-right: 5px;
+    }
+}
+
+.calendar-widget-container {
+    z-index: 10;
+    position: absolute;
+}
+
+.timepicker-widget-container {
+    z-index: 10;
+    position: absolute;
+}
+
+.policy-agreement-clause {
+    font-size: 60%;
+}
+
+.list-tile {
+    padding: 5px;
+
+/*    border: 1px solid;*/
+/*    border-radius: 5px;*/
+    & + & {
+        margin-top: 5px;
+    }
+    &.list-tile-1-2 {
+        width: 33.333%;
+    }
+    &.list-tile-2-3 {
+        width: 66.666%;
+    }
+}

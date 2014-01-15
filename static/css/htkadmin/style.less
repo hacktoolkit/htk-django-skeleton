@@ -1,0 +1,209 @@
+@import "_imports/fonts.less";
+@import "_imports/colors.less";
+
+@darkbgcolor: @black;
+@darkfgcolor: @light-gray;
+@lightbgcolor: @lighter-gray;
+@lightfgcolor: @dark-gray;
+@darkbg-header-color: @dark-slate-gray;
+
+/* dark and light */
+.dark-bg-base {
+    background-color: @darkbgcolor !important;
+    color: @darkfgcolor !important;
+    a {
+        color: @darkfgcolor;
+        &.pure-menu-label {
+            color: @darkfgcolor;
+        }
+    }
+}
+
+.light-bg-base {
+    background-color: @lightbgcolor !important;
+    color: @lightfgcolor !important;
+    a {
+        color: @lightfgcolor;
+        &.pure-menu-label {
+            color: @lightfgcolor;
+        }
+    }
+}
+
+.dark-bg {
+    .dark-bg-base;
+    header {
+        /* inverted */
+        #header {
+            .dark-bg-base;
+            background-color: @darkbg-header-color !important;
+            .menu div {
+                border-color: @lightfgcolor !important;
+            }
+        }
+    }
+    #wrap {
+        .dark-bg-base;
+    }
+    footer {
+        /* inverted */
+        .dark-bg-base;
+        background-color: @darkbg-header-color !important;
+    }
+    .yui3-datatable-cell {
+        .dark-bg-base;
+    }
+    #errors {
+        border-color: @darkfgcolor;
+    }
+}
+
+.light-bg {
+    .light-bg-base;
+    header {
+        /* inverted */
+        #header {
+            .dark-bg-base;
+            .menu div {
+                border-color: @darkfgcolor !important;
+            }
+        }
+    }
+    #wrap {
+        .light-bg-base;
+    }
+    footer {
+        /* inverted */
+        .dark-bg-base;
+    }
+    .yui3-datatable-cell {
+        .light-bg-base;
+    }
+    #errors {
+        border-color: @lightfgcolor;
+    }
+}
+
+/* text, colors, fonts */
+.blurb,
+#header,
+#main,
+#footer {
+    font-family: @font-helvetica;
+}
+
+a.selected {
+    text-decoration: none;
+    cursor: default;
+}
+
+@errorcolor: @red;
+
+#errors {
+    color: @errorcolor;
+}
+
+form {
+    .form-required label {
+        font-weight: bold;
+    }
+
+    .form-error {
+        color: @errorcolor;
+        ul {
+            margin: 0px;
+            padding: 0px;
+            li {
+                list-style-type: none;
+            }
+        }
+    }
+
+    input.input-filled {
+        color: @dark-gray;
+    }
+    input.input-blank {
+        color: @medium-gray;
+    }
+    input.input-error {
+        border: 4px solid @red;
+    }
+    input.input-valid {
+        border: 4px solid @green;
+    }
+    input.input-typing {
+        border: 4px solid @medium-gray;
+    }
+    .update-success {
+        color: @okay-green;
+    }
+    .update-invalid {
+        color: @red;
+    }
+}
+
+#prelaunch_signup_form #id_email {
+    &:focus {
+        outline: none;
+    }
+}
+
+/* app */
+#header {
+    a {
+        font-weight: bold;
+    }
+    .title {
+        font-weight: bold;
+    }
+    #header_nav {
+        font-weight: bold;
+    }
+    .pure-menu {
+        /* copied from .yui3-skin-sam a.yui3-menu-label:hover */
+        .pure-menu-label {
+            &:hover {
+                background: @pure-menu-label-hover-bg;
+                @gradient-start: @pure-menu-label-hover-bg-gradient-start;
+                @gradient-end: @pure-menu-label-hover-bg-gradient-end;
+                background: -moz-linear-gradient(@gradient-start, @gradient-end);
+                background: -ms-linear-gradient(@gradient-start, @gradient-end);
+                background: -o-linear-gradient(@gradient-start, @gradient-end);
+                background: -webkit-linear-gradient(@gradient-start, @gradient-end);
+                background: linear-gradient(@gradient-start, @gradient-end);
+                border-bottom-color: @pure-menu-label-hover-border-bottom;
+                border-top-color: @pure-menu-label-hover-border-top;
+                color: @white;
+            }
+        }
+
+        background-color: transparent;
+    }
+    .pure-menu-has-children {
+        .pure-menu-label {
+/*            &:after {
+                content: '\25BE';
+                float: right;
+                margin-right: -20px;
+                margin-top: -1px;
+            }*/
+        }
+        .pure-menu-children {
+            /* background-color: transparent;*/
+            text-align: center;
+            width: 120px;
+            background-color: @black;
+            box-shadow: none;
+            &:focus, &:active {
+                outline: none;
+            }
+        }
+    }
+}
+
+.settings-avatar-box {
+    cursor: pointer;
+    &.deselected {
+        border-color: transparent;
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "htk"]
+	path = htk
+	url = git@github.com:hacktoolkit/django-htk.git

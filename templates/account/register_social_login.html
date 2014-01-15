@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+An account with the email address <span class="bold">{{ email }}</span> already exists.<br/>
+Please enter your password to log in and link your social account.<br/>
+<br/>
+<form method="POST">
+  {% csrf_token %}
+  <table class="form-table">
+    {% for field in auth_form %}
+    <tr{% if field.is_hidden %} class="hidden"{% endif %}>
+      <td>{{ field.label_tag}}:</td>
+      <td>{{ field }}</td>
+      <td class="form-error">{{ field.errors }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td>
+        <button type="submit">Next</button>
+      </td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

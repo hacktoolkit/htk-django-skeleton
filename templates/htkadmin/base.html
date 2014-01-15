@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>hacktoolkit - django skeleton</title>
+    {% include 'htkadmin/fragments/css/common.html' %}
+    {% include 'htkadmin/fragments/js/common.html' %}
+  </head>
+
+  <body class="light-bg">
+    <div id="wrap">
+      <header>
+        {% include 'htkadmin/fragments/header.html' %}
+      </header>
+      <div id="main">
+	<div class="content">
+	  {% block content %}{% endblock %}
+	</div>
+      </div>
+    </div>
+
+    <footer>
+      {% include 'htkadmin/fragments/footer.html' %}
+    </footer>
+    {% include 'htkadmin/fragments/js/htkadmin.html' %}
+    {% include 'htkadmin/fragments/js/nonblocking.html' %}
+  </body>
+</html>

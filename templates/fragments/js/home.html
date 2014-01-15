@@ -1,0 +1,7 @@
+<script type="text/javascript">
+{% if user.is_authenticated %}
+mixpanel.track('Reached landing page -- logged in');
+{% else %}
+mixpanel.track('Reached landing page -- logged out');
+{% endif %}
+</script>

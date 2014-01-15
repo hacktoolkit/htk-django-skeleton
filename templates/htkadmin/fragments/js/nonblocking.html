@@ -1,0 +1,11 @@
+{% comment %}
+Load any of our DOM-dependent JS at the end
+Benefits:
+- Doesn't interfere with the HTML loading
+- JS doesn't try to interact with DOM elements that don't exist yet
+- Doesn't need to wait for window.onload, document.ready
+- Possibly won't need to wait for Y.on('contentready'), etc.
+{% endcomment %}
+{% for javascript in javascripts %}
+{% include javascript %}
+{% endfor %}

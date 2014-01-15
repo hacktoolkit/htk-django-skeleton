@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hacktoolkit Django Skeleton</title>
+    {% include 'fragments/css/common.html' %}
+    {% include 'fragments/js/common.html' %}
+  </head>
+
+  <body class="yui3-skin-sam">
+    {% include 'fragments/js/pre_body.html' %}
+    <div id="wrap">
+      <header>
+        {% include 'fragments/header.html' %}
+      </header>
+      <div id="main">
+	<div class="content">
+	  {% include 'fragments/errors.html' %}
+	  {% block content %}{% endblock %}
+	</div>
+      </div>
+    </div>
+
+    <footer>
+      {% include 'fragments/footer.html' %}
+    </footer>
+
+    {% include 'fragments/htk/feedback.html' %}
+    {% include 'fragments/js/nonblocking.html' %}
+  </body>
+</html>

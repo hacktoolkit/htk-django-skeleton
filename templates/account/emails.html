@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1><a href="{% url 'account_settings' %}">Settings</a> - Emails</h1>
+
+{% with user_emails=user.emails.all %}
+<table class="user-email-table">
+  {% for user_email in user_emails %}
+  <tr>
+    <td>
+      {{ user_email.email }}
+    </td>
+    <td style="text-align: right;">
+      {% if user.email == user_email.email %}
+      Primary
+      {% else %}
+
+      <div class="right">
+        {% include 'fragments/accounts/delete_email_form.html' with email=user_email.email %}
+      </div>
+      {% if user_email.is_confirmed %}
+      <div class="right">
+        {% include 'fragments/accounts/set_primary_email_form.html' with email=user_email.email %}
+      </div>
+
+      {% else %}
+      (Not verified)
+      {% endif %}
+
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endwith %}
+
+<br/>
+
+<h4>Add Additional Email</h4>
+{% include 'fragments/forms/generic_tabular.html' with form=add_email_form submit_label='Add' %}
+
+{% endblock %}

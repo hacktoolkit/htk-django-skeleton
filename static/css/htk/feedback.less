@@ -1,0 +1,46 @@
+@import "../_imports/colors.less";
+
+#feedback_tab {
+    top: 40%;
+    position: fixed;
+    z-index: 10000;
+}
+
+#feedback_panel {
+    text-align: left;
+    font-family: Helvetica, Arial, Sans;
+    &:focus {
+        outline: none;
+    }
+    input, textarea {
+        font-size: 14px;
+        width: 98%
+    }
+    .yui3-widget-hd {
+        background-color: @light-gray;
+        color: @dark-gray;
+        background: -moz-linear-gradient(0% 100% 90deg,@medium-gray 7%,@light-gray 50%,@lighter-gray 100%);
+        background: -webkit-gradient(linear,left bottom,left top,from(@medium-gray),color-stop(0.07,@medium-gray),color-stop(0.5,@light-gray),to(@lighter-gray));
+        font-weight: bold;
+    }
+}
+
+#feedback_button {
+    padding: 10px;
+    border: 3px solid;
+    font-weight: bold;
+    font-family: Helvetica, Arial, Sans;
+    text-decoration: none;
+    cursor: pointer;
+    display: block;
+    -webkit-transform: translate(-50px) rotate(-90deg);
+    -moz-transform: translate(-50px) rotate(-90deg);
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+
+/*
+#feedback_button, #feedback_panel .yui3-widget-bd {
+    background-color: @white;
+    color: @dark-gray;
+}
+*/

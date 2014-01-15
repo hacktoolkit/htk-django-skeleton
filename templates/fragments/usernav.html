@@ -1,0 +1,36 @@
+<div id="usernav" class="pure-menu pure-menu-open pure-menu-horizontal">
+  <ul id="usernav_items">
+    {% if show_login_register %}
+    {% if user.is_authenticated %}
+    <li>
+      <a href="{% url 'account_home' %}">{{ user.profile.get_nav_display_name }}</a>
+      <ul>
+        {% if user.is_staff %}
+        <li>
+          <a href="{% url 'admin:index' %}">Admin</a>
+        </li>
+        {% endif %}
+        {% if user.profile.is_hacktoolkit_staff %}
+        <li>
+          <a href="{% url 'htkadmin' %}">Htkdmin</a>
+        </li>
+        {% endif %}
+        <li>
+          <a href="{% url 'account_settings' %}">Settings</a>
+        </li>
+        <li>
+          <a href="{% url 'account_logout' %}">Log Out</a>
+        </li>
+      </ul>
+    </li>
+    {% else %}
+    <li>
+      <a href="{% url 'account_login' %}{% if query_string %}?{{ query_string }}{% endif %}">Log In</a>
+    </li>
+    <li>
+      <a href="{% url 'account_register' %}">Sign Up</a>
+    </li>
+    {% endif %}
+    {% endif %}
+  </ul>
+</div>

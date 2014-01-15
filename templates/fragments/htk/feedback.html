@@ -1,0 +1,13 @@
+{% if feedback_form %}
+<script type="text/javascript" src="/static/js/htk/feedback_overlay.js?v={{ asset_version }}"></script>
+
+<div id="feedback_tab" class="feedback-tab-left no-highlight">
+  <div id="feedback_button" class="rounded-bottom">
+    Give Feedback
+  </div>
+</div>
+
+<script id="feedback_panel_content" type="text/x-template">
+  {% include 'fragments/htk/feedback_form.html' %}
+</script>
+{% endif %}
