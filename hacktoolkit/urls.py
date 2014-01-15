@@ -21,8 +21,6 @@ urlpatterns = patterns(
     # apps
     url(r'^account/', include('accounts.urls')),
     url(r'^api/', include('api.urls')),
-    url(r'^feedback/', include('htk.apps.feedback.urls')),
-    url(r'^prelaunch/', include('htk.apps.prelaunch.urls')),
     # admin
     #url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^htkadmin/', include('hacktoolkit.htkadmin.urls')),
@@ -30,12 +28,11 @@ urlpatterns = patterns(
     url(r'^admin/', include(admin.site.urls)),
     # django-social-auth
     url(r'', include('social.apps.django_app.urls', namespace='social')),
+    # htk
+    url(r'', include('htk.urls')),
+    url(r'^feedback/', include('htk.apps.feedback.urls')),
+    url(r'^prelaunch/', include('htk.apps.prelaunch.urls')),
     # meta
-    # google site verification
-    url(r'^google(?P<code>[a-z0-9]+)\.html$', views.google_site_verification, name='google_site_verification'),
-    url(r'^BingSiteAuth\.xml$', views.bing_site_auth, name='bing_site_auth'),
-    url(r'^(?P<code>.+)--\.html$', views.html_site_verification, name='html_site_verification'),
-    url(r'^robots\.txt$', views.robots, name='robots'),
     url(r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap', { 'sitemaps': SITEMAPS }, name='sitemap'),
 )
 
