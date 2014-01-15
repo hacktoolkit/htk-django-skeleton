@@ -336,12 +336,14 @@ HTK_FEEDBACK_EMAIL_TO = (
 )
 
 HTK_PRELAUNCH_MODE = True
+HTK_PRELAUNCH_TEMPLATE = 'htk/prelaunch.html'
+HTK_PRELAUNCH_VIEW_CONTEXT_GENERATOR = 'hacktoolkit.view_helpers.wrap_data'
+
+HTK_PRELAUNCH_EMAIL_TEMPLATE = 'htk/prelaunch'
 HTK_PRELAUNCH_EMAIL_SUBJECT = 'Thanks for signing up at Hacktoolkit!'
 HTK_PRELAUNCH_EMAIL_BCC = (
     '<hello@hacktoolkit.com>',
 )
-HTK_PRELAUNCH_TEMPLATE = 'htk/prelaunch.html'
-HTK_PRELAUNCH_VIEW_CONTEXT_GENERATOR = 'hacktoolkit.view_helpers.wrap_data'
 
 # end htk settings
 #####
