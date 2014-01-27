@@ -330,6 +330,22 @@ LOGGING = {
 #####
 # begin htk settings
 
+HTK_ALLOWED_HOST_REGEXPS = (
+    r'(.*\.)?hacktoolkit\.com(\.)?',
+)
+HTK_DEFAULT_DOMAIN = 'hacktoolkit.com'
+
+HTK_DEFAULT_EMAIL_SENDING_DOMAIN = HTK_DEFAULT_DOMAIN
+HTK_DEFAULT_EMAIL_SENDER = 'Hacktoolkit <info@hacktoolkit.com>'
+HTK_DEFAULT_EMAIL_RECIPIENTS = ['info@hacktoolkit.com',]
+HTK_DEFAULT_EMAIL_BCC = (
+    'watcher@hacktoolkit.com',
+)
+
+HTK_ACCOUNTS_DEFAULT_DISPLAY_NAME = 'Hacktoolkit User'
+
+HTK_CACHE_KEY_PREFIX = 'hacktoolkit'
+
 HTK_EMAIL_CONTEXT_GENERATOR = 'htk.mailers.email_context_generator'
 
 HTK_FEEDBACK_EMAIL_SUBJECT = 'New feedback from Hacktoolkit.com'
@@ -346,6 +362,9 @@ HTK_PRELAUNCH_EMAIL_SUBJECT = 'Thanks for signing up at Hacktoolkit!'
 HTK_PRELAUNCH_EMAIL_BCC = (
     '<hello@hacktoolkit.com>',
 )
+
+HTK_LIB_GEOIP_COUNTRY_DB = os.path.join(BASEDIR, '..', 'conf', 'geoip', 'GeoIP.dat')
+HTK_LIB_GEOIP_CITY_DB = os.path.join(BASEDIR, '..', 'conf', 'geoip', 'GeoIPCity.dat')
 
 # end htk settings
 #####
