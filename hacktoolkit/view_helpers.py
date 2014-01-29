@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 from htk.apps.feedback.forms import FeedbackForm
 
 from hacktoolkit.constants import *
-from htk.session_keys import *
 from htk.view_helpers import get_asset_version
 from htk.utils import utcnow
 

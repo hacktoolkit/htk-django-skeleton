@@ -1,4 +1,4 @@
-test: test_accounts test_api test_htk test_libraries
+test: test_accounts test_api test_htk
 
 compile:
 	cd static/css/ && make
@@ -14,9 +14,6 @@ test_api:
 
 test_htk:
 	python manage.py test htk
-
-test_libraries:
-	python manage.py test libraries
 
 test_scripts:
 	python manage.py test scripts

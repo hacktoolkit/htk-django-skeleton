@@ -245,6 +245,7 @@ MIDDLEWARE_CLASSES = (
     'htk.apps.prelaunch.middleware.PrelaunchModeMiddleware',
     'htk.middleware.TimezoneMiddleware',
     'accounts.middleware.HtkSocialAuthExceptionMiddleware',
+    'htk.middleware.RewriteJsonResponseContentTypeMiddleware',
 )
 
 if not TEST:
@@ -283,7 +284,6 @@ INSTALLED_APPS = (
     # my apps
     'accounts',
     'api',
-    'libraries',
     'hacktoolkit',
     'htk',
     'htk.apps.feedback',
@@ -332,6 +332,7 @@ LOGGING = {
 
 HTK_ALLOWED_HOST_REGEXPS = (
     r'(.*\.)?hacktoolkit\.com(\.)?',
+    r'django\.jontsai\.com(\.)?',
 )
 HTK_DEFAULT_DOMAIN = 'hacktoolkit.com'
 

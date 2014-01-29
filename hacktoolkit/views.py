@@ -6,7 +6,6 @@ from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 
-from htk.session_keys import *
 from htk.view_helpers import render_to_response_custom as _r
 from hacktoolkit.view_helpers import wrap_data
 

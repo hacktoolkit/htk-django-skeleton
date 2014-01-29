@@ -17,7 +17,6 @@ from accounts.utils import get_user_by_email
 from accounts.models import UserEmail
 from accounts.models import UserProfile
 from hacktoolkit.constants import *
-from htk.session_keys import *
 from htk.utils.geo import get_us_state_abbreviation_choices
 
 class UserRegistrationForm(UserCreationForm):
