@@ -367,7 +367,7 @@ HTK_PRELAUNCH_EMAIL_BCC = (
 HTK_LIB_GEOIP_COUNTRY_DB = os.path.join(BASEDIR, '..', 'conf', 'geoip', 'GeoIP.dat')
 HTK_LIB_GEOIP_CITY_DB = os.path.join(BASEDIR, '..', 'conf', 'geoip', 'GeoIPCity.dat')
 
-HTK_SOCIAL_AUTH_CONNECT_ERROR_URL = 'account/settings'
+HTK_SOCIAL_AUTH_CONNECT_ERROR_URL = '/account/settings'
 
 # end htk settings
 #####
