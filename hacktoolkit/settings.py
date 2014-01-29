@@ -244,7 +244,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'htk.apps.prelaunch.middleware.PrelaunchModeMiddleware',
     'htk.middleware.TimezoneMiddleware',
-    'accounts.middleware.HtkSocialAuthExceptionMiddleware',
+    'htk.apps.accounts.middleware.HtkSocialAuthExceptionMiddleware',
     'htk.middleware.RewriteJsonResponseContentTypeMiddleware',
 )
 
