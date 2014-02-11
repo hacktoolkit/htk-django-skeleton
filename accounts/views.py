@@ -18,6 +18,14 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.csrf import csrf_protect
 from django.views.decorators.http import require_GET
 
+from htk.api.utils import json_response
+from htk.api.utils import json_response_error
+from htk.api.utils import json_response_okay
+from htk.apps.accounts.utils import get_user_by_email
+from htk.apps.accounts.utils import get_user_email
+from htk.utils import utcnow
+from htk.view_helpers import render_to_response_custom as _r
+
 from accounts.constants import *
 from accounts.decorators import logged_in_redirect_home
 from accounts.decorators import logout_required
@@ -33,19 +41,10 @@ from accounts.forms import UsernameEmailAuthenticationForm
 from accounts.models import UserEmail
 from accounts.models import UserProfile
 from accounts.session_keys import *
-from accounts.utils import get_user_by_email
-from accounts.utils import get_user_email
 from accounts.view_helpers import get_social_auths_status
 from accounts.view_helpers import get_user_update_forms
 from accounts.view_helpers import redirect_to_social_auth_complete
 from accounts.view_helpers import wrap_data_accounts
-
-from htk.api.utils import json_response
-from htk.api.utils import json_response_error
-from htk.api.utils import json_response_okay
-
-from htk.utils import utcnow
-from htk.view_helpers import render_to_response_custom as _r
 
 @login_required
 def index(request):

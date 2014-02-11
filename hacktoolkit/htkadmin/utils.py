@@ -1,4 +1,5 @@
-from accounts.utils import get_user_by_email
+from htk.apps.accounts.utils import get_user_by_email
+
 from hacktoolkit.htkadmin.cachekeys import HtkStaffCache
 from hacktoolkit.htkadmin.constants import *
 

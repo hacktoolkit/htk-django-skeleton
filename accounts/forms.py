@@ -7,13 +7,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.tokens import default_token_generator
 from django.utils.translation import ugettext_lazy as _
 
+from htk.apps.accounts.utils import authenticate_user_by_username_email
+from htk.apps.accounts.utils import associate_user_email
+from htk.apps.accounts.utils import email_to_username_hash
+from htk.apps.accounts.utils import get_user_by_email
+
 from accounts.constants import *
 from accounts.emails import password_reset_email
 from accounts.session_keys import *
-from accounts.utils import authenticate_user_by_username_email
-from accounts.utils import associate_user_email
-from accounts.utils import email_to_username_hash
-from accounts.utils import get_user_by_email
 from accounts.models import UserEmail
 from accounts.models import UserProfile
 from hacktoolkit.constants import *
